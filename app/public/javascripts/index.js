@@ -2,6 +2,7 @@ const Eos = require('../../node_modules/eosjs');
 const Crypto = require('./crypto');
 const Data = require('./data');
 const Chain = require('./chain');
+const Poll = require('./poll');
 
 // Crypto usage
 // let pair = Crypto.newKeyPair(8 * 100);

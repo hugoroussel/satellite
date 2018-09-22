@@ -65,7 +65,7 @@ Follow the instructions one by one to get ready:
 
 ## Tips
 
-This section gathers some useful tips for diverse taskes
+This section gathers some useful tips for diverse tasks
 
 * Deploy a contract:
     * Get in the EOS container `docker exec -it <container_name> /bin/bash`

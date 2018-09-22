@@ -9,7 +9,7 @@ The main architecture modifications are the following:
 * No more `react` frontend framework because none of the team knows it. All the frontend related code is now under `myapp/public/`
 * We add a `node.js` backend server additionally to the blockchain part. Right now it only serves the HTML pages, but we might be happy to have it if we end up building a more complete webapp with the blockchain being only a small part of it
 
-The communication connections are the following: 
+The communication connections are the following:
 
 * Browser <-> EOS
 * Browser <-> backend
@@ -46,7 +46,7 @@ Follow the instructions one by one to get ready:
     4. Add `eosjs` as dependencies
     5. `npm install`
     6. `npm install nodemon browserify watchify -g`
-    7. Update the scripts of `package.json`: 
+    7. Update the scripts of `package.json`:
 ```
 "scripts": {
     "bundle": "browserify public/javascripts/index.js -o public/javascripts/bundle.js",
@@ -68,9 +68,9 @@ Follow the instructions one by one to get ready:
 This section gathers some useful tips for diverse tasks
 
 * Deploy a contract:
-    * Get in the EOS container `docker exec -it <container_name> /bin/bash`
-    * Deploy the contract `scripts/deploy_contract.sh <contrat_name> <contract_account> <contract_wallet> $(cat <contract_wallet_pwd_file>.txt)`
+    * Get in the EOS container `docker exec -it eosio_satellite_container /bin/bash`
+    * Deploy the contract `scripts/deploy_contract.sh satellite satelliteacc satellitewal $(cat satellite_wallet_password.txt)`
     * Note that the contract folder is tied to the container so no data should be manually copied
 * Look at the running docker containers: `docker ps`
-* Stop a container: `docker stop <container>`
-* Remove a container (mainly to reset everything): `docker rm --force <container>`
+* Stop a container: `docker stop eosio_satellite_container`
+* Remove a container (mainly to reset everything): `docker rm --force eosio_satellite_container`

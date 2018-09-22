@@ -1,0 +1,11 @@
+# MacOS
+.DS_Store
+
+# Node
+node_modules/
+
+# UI
+app/public/dist/
+
+# eosio
+eosio_docker/data/

@@ -93,7 +93,7 @@
                 <li class="breadcrumb-item">
                     <a href="info.html">Bob</a>
                 </li>
-                <li class="breadcrumb-item active">First connection</li>
+                <li class="breadcrumb-item active">My Info</li>
             </ol>
 
             <div class="container-fluid">
@@ -104,19 +104,18 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <strong>First login</strong>
-                                    <small>Form</small>
+                                    <strong>My Information</strong>
                                 </div>
                                 <div class="card-body">
                                     <form>
                                         <div class="row">
                                             <div class="form-group col-sm-6">
                                                 <label for="firstname">First name</label>
-                                                <input class="form-control" id="firstname" type="text" placeholder="John">
+                                                <input class="form-control" id="firstname" type="text" placeholder="John" disabled>
                                             </div>
                                             <div class="form-group col-sm-6">
                                                 <label for="lastname">Last Name</label>
-                                                <input class="form-control" id="lastname" type="text" placeholder="Doe">
+                                                <input class="form-control" id="lastname" type="text" placeholder="Doe" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -140,18 +139,18 @@
                                         <div class="row">
                                             <div class="form-group col-sm-3">
                                                 <label for="birthdate">Birthdate</label>
-                                                <input class="form-control" id="birthdate" type="text" placeholder="mm/dd/yyy">
+                                                <input class="form-control" id="birthdate" type="text" placeholder="mm/dd/yyy" disabled>
                                             </div>
                                             <div class="form-group col-sm-9">
                                                 <label for="nationality">Nationality</label>
-                                                <input class="form-control" id="nationality" type="text" placeholder="English">
+                                                <input class="form-control" id="nationality" type="text" placeholder="English" disabled>
                                             </div>
 
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-sm-3">
                                                 <label for="gender">Gender</label>
-                                                <select class="form-control" id="gender">
+                                                <select class="form-control" id="gender" disabled>
                                                     <option selected>Male</option>
                                                     <option>Female</option>
                                                     <option>Other</option>>
@@ -160,7 +159,7 @@
 
                                             <div class="form-group col-sm-3">
                                                 <label for="marital">Marital status</label>
-                                                <select class="form-control" id="marital">
+                                                <select class="form-control" id="marital" disabled>
                                                     <option selected>Single</option>
                                                     <option>Married</option>
                                                     <option>Divorced</option>>
@@ -170,12 +169,12 @@
 
                                             <div class="form-group col-sm-3">
                                                 <label for="children">Number of children</label>
-                                                <input class="form-control" id="children" type="text" placeholder="2">
+                                                <input class="form-control" id="children" type="text" placeholder="2" disabled>
                                             </div>
 
                                             <div class="form-group col-sm-3">
                                                 <label for="blood">Blood type</label>
-                                                <select class="form-control" id="blood">
+                                                <select class="form-control" id="blood" disabled>
                                                     <option selected>O+</option>
                                                     <option>O-</option>
                                                     <option>A+</option>>
@@ -203,12 +202,11 @@
                                 </div>
                                 <div class="card-footer">
                                     <button class="btn btn-sm btn-primary" type="submit">
-                                      <i class="fa fa-dot-circle-o"></i> Submit</button>
-                                    <button class="btn btn-sm btn-danger" type="reset">
-                                      <i class="fa fa-ban"></i> Reset</button>
+                                      <i class="fa fa-dot-circle-o"></i> Save changes</button>
+                                    <button class="btn btn-sm btn-danger" type="button">
+                                      <a href="info.html" style='color:white;'>Cancel</a></button>
                                   </div>
                             </div>
-                            
                         </div>
                         <!-- /.col-->
 

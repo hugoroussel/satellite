@@ -27,6 +27,8 @@ class Satellite : public eosio::contract {
     string hash_email,
     string hash_phone_num) {
 
+      return;
+
      //verification commented for testing purposes
      //require_auth(dpo_owner)
 

@@ -12,24 +12,18 @@ function handleValidSensitive(item, user, target, motivation) {
         motivation: motivation
     });
 
+    $('#modalSensitive').modal('toggle');
 
-    var modalToggledOnce = false;
+    removeRow(item);
+}
 
+function removeRow(item) {
+    console.log($(item).closest('tr'))
+    $(item).closest('tr').remove()
+}
 
-    function removeRow(item) {
-        console.log($(item).closest('tr'))
-        $(item).closest('tr').remove()
-    }
-
-
-    if (!modalToggledOnce) {
-        $('#exampleModalCenter').modal('toggle');
-    }
-    modalToggledOnce = true;
-    // item.classList.remove("btn-danger");
-    // item.classList.add("btn-warning");
-    // item.innerHTML = "<i class='fa fa-spinner'></i>"
-
+function handleValid(item) {
+    $('#exampleModalCenter').modal('toggle');
     console.log("Validated");
     removeRow(item);
 }
@@ -37,6 +31,7 @@ function handleValidSensitive(item, user, target, motivation) {
 function handleRefused(item) {
 
     console.log("Refused");
+    $('#modalRefused').modal('toggle');
     removeRow(item);
 }
 

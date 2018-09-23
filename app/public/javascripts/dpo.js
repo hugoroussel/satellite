@@ -8,15 +8,19 @@ function displayRequests(requests) {
 
 }
 
+function removeRow(item) {
+    $(item).closest('tr').remove()
+}
 function handleValid(item) {
 
-    console.log("Validated")
+    console.log("Validated");
+    removeRow(item);
 }
 
 function handleRefused(item) {
 
-    console.log("Refused")
-
+    console.log("Refused");
+    removeRow(item);
 }
 
 // populateTableBody, data [{'motivation' : '...' see below}], true if request.html, false if dashboard

@@ -215,7 +215,6 @@ class Satellite : public eosio::contract {
  private:
 
    /// @abi table employee
-   //TO DO : add other parameters
    struct employee{
     account_name _person;
     string _hash_first_name;
@@ -247,7 +246,7 @@ class Satellite : public eosio::contract {
 
 
 
-   ///@abi table requests
+   ///@abi table request
    struct request{
      account_name _from;
      account_name _to;

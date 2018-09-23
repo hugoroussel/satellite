@@ -9,23 +9,60 @@ const conf = {
 const eos = Eos(conf);
 
 const contractName = "satelliteacc";
-const auth = userAcc + "@active";
+var exports = {};
 
-function newEmployee(name) {
+exports.newEmployee = function (userAcc, name) {
     return eos.contract(contractName)
-        .then(acc => acc.add(name, { authorization: auth }))
+        .then(acc => acc.add(userAcc, name, { authorization: userAcc + "@active" }))
         .then(console.log)
         .catch(console.log);
 }
 
-function deleteEmployee() {
+exports.deleteEmployee = function (userAcc) {
+    return eos.contract(contractName)
+        .then(acc => acc.remove(userAcc))
+        .then(console.log)
+        .catch(console.log);
+}
+
+exports.requestAccess = function (accessor, target) {
     return eos.contract(contractName)
         .then(console.log)
         .catch(console.log);
 }
 
-function requestAccess(accessor, target) {
+exports.newAccessor = function (userAcc, accessor, reason1, reason2, name) {
     return eos.contract(contractName)
+        .then(acc => acc.newAccessor(userAcc, accessor, reason1, reason2, name))
         .then(console.log)
         .catch(console.log);
 }
+
+exports.getRequests = function () {
+    return eos.getTableRows({
+        code: contractName,
+        scope: contractName,
+        table: '_requests',
+        json: true,
+    })
+        .then(res => {
+            return res;
+        });
+}
+
+exports.getDependencies = function () {
+    return eos.getTableRows({
+        code: contractName,
+        scope: contractName,
+        table: '_employees',
+        json: true,
+    })
+        .then(res => {
+            res.map(elem => {
+                console.log(elem);
+                return elem[0];
+            });
+        })
+}
+
+module.exports = exports;

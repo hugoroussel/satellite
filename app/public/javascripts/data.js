@@ -1,2 +1,10 @@
-let form = new FormData();
-form.append("Name", "Paul");
+const axios = require('axios');
+
+var exports = {};
+
+exports.newPii = function (hash, encrypted) {
+    axios.post('/post-pii', {
+        hash: hash,
+        encrypted: encrypted
+    });
+}

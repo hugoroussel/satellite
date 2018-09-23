@@ -13,7 +13,7 @@ router.get('/get-pii', function (req, res, next) {
   return res.send(encrypted[0].encrypted);
 });
 
-router.post('/update-pii', function (req, res) {
+router.post('/post-pii', function (req, res) {
   req.app.piis.insert({ hash: req.body.hash, encrypted: req.body.encrypted });
   return res.send('ok');
 });

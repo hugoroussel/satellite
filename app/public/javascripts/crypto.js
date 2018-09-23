@@ -1,6 +1,13 @@
 const NodeRSA = require('node-rsa');
+const crypto = require('crypto');
 
 var exports = {};
+
+exports.hash = function (payload) {
+    return crypto.createHmac('sha256', 'secret')
+        .update(payload)
+        .digest('hex');
+}
 
 exports.newKeyPair = function (size) {
     const key = new NodeRSA();

@@ -2,6 +2,10 @@ const Eos = require('../../node_modules/eosjs');
 const Crypto = require('./crypto');
 const Data = require('./data');
 const Chain = require('./chain');
+const Dpo = require('./dpo');
+
+
+console.log(Dpo);
 //const Poll = require('./poll');
 
 // const populate = require('./populate').populate;
@@ -9,8 +13,8 @@ const Chain = require('./chain');
 
 
 
-Chain.getData()
-    .then(console.log);
+// Chain.getData()
+//     .then(console.log);
 
 // Chain.getDependencies()
 //     .then(console.log);

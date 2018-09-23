@@ -1,20 +1,21 @@
-const Chain = require('./chain');
-const Crypto = require('./crypto');
-
-function loadPendingRequests() {
-    Chain.getRequests().then(displayRequests);
-}
-
-function displayRequests(requests) {
-
-}
-
 function removeRow(item) {
     console.log($(item).closest('tr'))
     $(item).closest('tr').remove()
 }
-function handleValid(item) {
 
+function handleValidSensitive(item, user, target, motivation) {
+    console.log(user, target, motivation)
+
+    $.post('/post-accepted-by-dpo', {
+        user: user,
+        target: target,
+        motivation: motivation
+    });
+
+    handleValid(item);
+}
+
+function handleValid(item) {
     console.log("Validated");
     removeRow(item);
 }
@@ -48,9 +49,9 @@ function populateTableBody(tableBodyID, json_obj, spec) {
                     td.innerHTML = '<div class="small text-muted">18/09/2018</div><strong>' +
                         p[key] +
                         '</strong>';
-                } else if (key == 'user'){
+                } else if (key == 'user') {
                     td.setAttribute['user'] = p[key];
-                } else if (key == 'target'){
+                } else if (key == 'target') {
                     td.setAttribute['target'] = p[key];
                 }
                 tr.appendChild(td);

@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var loki = require('lokijs');
+var bodyParser = require('body-parser')
 
 var indexRouter = require('./routes/index');
 
@@ -14,6 +15,7 @@ var app = express();
 
 app.piis = piis;
 
+app.use(bodyParser.urlencoded())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());

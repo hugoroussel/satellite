@@ -58,18 +58,18 @@
         </button>
         <a class="navbar-brand" href="#">
             <img class="navbar-brand-full" src="../img/brand/logo.svg" width="89" height="25" alt="CoreUI Logo">
-             
+
         </a>
 
         <ul class="nav navbar-nav d-md-down-none">
-                <div>Bob</div>
+            <div>Bob</div>
 
-                <li class="nav-item px-3">
-                    <div class="avatar">
-                        <img class="img-avatar" src="../img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
-                        <span class="avatar-status badge-success"></span>
-                    </div>
-                </li>
+            <li class="nav-item px-3">
+                <div class="avatar">
+                    <img class="img-avatar" src="../img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
+                    <span class="avatar-status badge-success"></span>
+                </div>
+            </li>
         </ul>
 
     </header>
@@ -77,12 +77,12 @@
         <div class="sidebar">
             <nav class="sidebar-nav">
                 <ul class="nav">
-                        <li class="nav-title"></li>
-                        <li class="nav-item" style='text-align: center;'>
-                            <a href="../dpo/index.html"><span class="badge badge-info">App as a DPO</span></a>&nbsp;
-                            <a href="../user/index.html"><span class="badge badge-warning" >App as a user</span></a>
-                        </li>
-                        <li class="nav-title"></li>
+                    <li class="nav-title"></li>
+                    <li class="nav-item" style='text-align: center;'>
+                        <a href="../dpo/index.html"><span class="badge badge-info">App as a DPO</span></a>&nbsp;
+                        <a href="../user/index.html"><span class="badge badge-warning">App as a user</span></a>
+                    </li>
+                    <li class="nav-title"></li>
                     <li class="nav-title">User</li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">
@@ -93,7 +93,7 @@
                         <a class="nav-link" href="notifications.html">
                             <i class="nav-icon icon-bell"></i> Notifications</a>
                     </li>
-                     
+
                     <li class="nav-item">
                         <a class="nav-link" href="info.html">
                             <i class="nav-icon icon-user"></i> My Info</a>
@@ -115,7 +115,7 @@
             </nav>
         </div>
         <main class="main">
-            
+
             <!-- Breadcrumb-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">Home</li>
@@ -221,7 +221,7 @@
                                                 <th class='ccenter'>Report</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="trust-chain-body">
                                             <tr>
                                                 <td>Yiorgos Avraamu</td>
                                                 <td>2012/01/01</td>
@@ -247,18 +247,6 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>Quintin Ed</td>
-                                                <td>2012/02/01</td>
-                                                <td>
-                                                    <span class="badge badge-secondary" data-toggle="popover"
-                                                        data-trigger="hover" data-content="First name, Last name">Basic</span>
-                                                </td>
-                                                <td class='ccenter'>
-                                                    <button class="btn btn-sm btn-danger" onclick="handleRemoval(this)">
-                                                        <i class="fa fa-times"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
                                                 <td>Enéas Kwadwo</td>
                                                 <td>2012/03/01</td>
                                                 <td>
@@ -266,7 +254,7 @@
                                                         data-trigger="hover" data-content="Phone number, Address, Gender, Marital status">Sensitive</span>
                                                 </td>
                                                 <td class='ccenter'>
-                                                    <button class="btn btn-sm btn-danger" onclick="handleRemoval(this)" >
+                                                    <button class="btn btn-sm btn-danger" onclick="handleRemoval(this)">
                                                         <i class="fa fa-times"></i></button>
                                                 </td>
                                             </tr>
@@ -315,7 +303,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                        We will notify you as soon as your request status has changed. 
+                    We will notify you as soon as your request status has changed.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -342,9 +330,30 @@
     <script>
         var modalToggledOnce = false;
 
+        $.get('/get-accepted-by-dpo')
+            .done(data => {
+                if (data) {
+                    console.log(data);
+                    let html = '<td>2012/02/01</td><td><span class="badge badge-warning" data-toggle="popover"data-trigger="hover" data-content="First name, Last name">Sensitive</span></td><td class="ccenter"><button class="btn btn-sm btn-success" onclick="handleAcceptSensitive(this)"><i class="fa fa-check"></i></button></td>'
+                    let row = $('<tr>')
+                    row.html(html);
+                    let name = $('<td>');
+                    name.html(data.user);
+                    row.prepend(name);
+
+                    $('#trust-chain-body').prepend(row);
+                }
+            });
+
         $(function () {
             $('[data-toggle="popover"]').popover();
         })
+
+        function handleAcceptSensitive(item) {
+            item.classList.remove("btn-success");
+            item.classList.add("btn-danger");
+            item.innerHTML = "<i class='fa fa-times'></i>"
+        }
 
         function handleRemoval(item) {
             if (!modalToggledOnce) {

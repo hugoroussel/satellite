@@ -33,7 +33,7 @@ class Satellite : public eosio::contract {
      _employees employees_table(_self,_self);
 
     const auto& iterator = employees_table.find(person);
-    eosio_assert(iterator != employees_table.end(), "Employee is already in the table");
+    eosio_assert(iterator == employees_table.end(), "Employee is already in the table");
 
      employees_table.emplace(_self, [&](auto& emp) {
         emp._person = person;

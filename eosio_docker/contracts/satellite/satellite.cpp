@@ -25,14 +25,17 @@ class Satellite : public eosio::contract {
     string hash_children_number,
     string hash_blodd_type,
     string hash_email,
-    string hash_phone_num) {
+    string hash_phone_num,
+    string sensitive,
+    string not_sensitive,
+    account_name accessor) {
 
      //verification commented for testing purposes
      //require_auth(dpo_owner)
 
      _employees employees_table(_self,_self);
 
-    const auto& iterator = employees_table.find(person);
+    auto iterator = employees_table.find(person);
     eosio_assert(iterator == employees_table.end(), "Employee is already in the table");
 
      employees_table.emplace(_self, [&](auto& emp) {
@@ -47,6 +50,9 @@ class Satellite : public eosio::contract {
         emp._hash_blodd_type = hash_blodd_type;
         emp._hash_email = hash_email;
         emp._hash_phone_num = hash_phone_num;
+        emp._sensitive_reason = sensitive;
+        emp._not_sensitive_reason = not_sensitive;
+        emp._accessor = accessor;
      });
      print("Added employee record hash.");
 
@@ -63,7 +69,10 @@ class Satellite : public eosio::contract {
     string hash_children_number,
     string hash_blodd_type,
     string hash_email,
-    string hash_phone_num){
+    string hash_phone_num,
+    string sensitive,
+    string not_sensitive,
+    account_name accessor){
 
     //TO DO : decide level of clearance
     //require_auth(???)
@@ -83,6 +92,9 @@ class Satellite : public eosio::contract {
     emp._hash_blodd_type = hash_blodd_type;
     emp._hash_email = hash_email;
     emp._hash_phone_num = hash_phone_num;
+    emp._sensitive_reason = sensitive;
+    emp._not_sensitive_reason = not_sensitive;
+    emp._accessor = accessor;
     });
     print("A record was modified.");
 }
@@ -157,7 +169,7 @@ class Satellite : public eosio::contract {
    void printall(){
      _employees employees_table(_self,_self);
      for (auto i=employees_table.begin();i!=employees_table.end();) {
-       print(i->_person);
+       print(name{i->_person});
        i++;
      }
    }
@@ -178,16 +190,20 @@ class Satellite : public eosio::contract {
     string _hash_blodd_type;
     string _hash_email;
     string _hash_phone_num;
+    string _sensitive_reason;
+    string _not_sensitive_reason;
+    account_name _accessor;
 
 
-     uint64_t primary_key() const {return _person;}
+
+     uint64_t primary_key() const {return _person + _accessor;}
 
      EOSLIB_SERIALIZE(employee,
        (_person)(_hash_first_name)(_hash_last_name)
        (_hash_address)(_hash_nationality)
        (_hash_gender)(_hash_martial_status)(_hash_children_number)
-       (_hash_blodd_type) (_hash_email)(_hash_email)(_hash_phone_num));
-
+       (_hash_blodd_type) (_hash_email)(_hash_phone_num)(_sensitive_reason)
+       (_not_sensitive_reason)(_accessor));
    };
    typedef multi_index<N(employee), employee> _employees;
 

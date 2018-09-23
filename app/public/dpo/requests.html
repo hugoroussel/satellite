@@ -349,22 +349,13 @@
   <script src="node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
   <script src="js/main.js"></script> -->
     <script src="../dist/bundle.js"></script>
-    <script src="../dist/bundle.js"></script>
     <script src="../javascripts/jquery.min.js"></script>
     <script src="../javascripts/popper.min.js"></script>
     <script src="../javascripts/bootstrap.min.js"></script>
+    <script src="../javascripts/dpo.js"></script>
+
     <script>
-        function handleValid(item) {
-
-            console.log("Validated")
-        }
-
-        function handleRefused(item) {
-
-            console.log("Refused")
-
-        }
-
+        
         json_example = [{
                 "name": 'Bob',
                 'target': 'Alice',
@@ -402,6 +393,7 @@
             console.log(json_example)
             var oldTable = document.getElementById(tableBodyID);
                 newTable = document.createElement('tbody');
+                newTable.id = tableBodyID;
             for (var i = 0; i < json_example.length; i++) {
                 var tr = document.createElement('tr');
                 p = json_example[i];

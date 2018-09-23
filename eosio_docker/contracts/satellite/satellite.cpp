@@ -30,8 +30,6 @@ class Satellite : public eosio::contract {
     string not_sensitive,
     account_name accessor) {
 
-      return;
-
      //verification commented for testing purposes
      //require_auth(dpo_owner)
 

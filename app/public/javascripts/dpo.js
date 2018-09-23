@@ -9,11 +9,24 @@ function displayRequests(requests) {
 
 }
 
+
+var modalToggledOnce = false;
+
+
 function removeRow(item) {
     console.log($(item).closest('tr'))
     $(item).closest('tr').remove()
 }
 function handleValid(item) {
+
+
+    if (!modalToggledOnce) {
+        $('#exampleModalCenter').modal('toggle');
+    }
+    modalToggledOnce = true;
+    // item.classList.remove("btn-danger");
+    // item.classList.add("btn-warning");
+    // item.innerHTML = "<i class='fa fa-spinner'></i>"
 
     console.log("Validated");
     removeRow(item);
@@ -42,7 +55,7 @@ function populateTableBody(tableBodyID, json_obj, spec) {
                 } else if (key == 'sensitivity') {
                     td.setAttribute['sensitivity'] = p[key];
                     td.innerHTML =
-                        '<span class="badge badge-secondary" data-toggle="popover" data-trigger="hover" data-content="First Name, Last Name">' +
+                        '<span class="badge badge-pill badge-secondary" data-toggle="popover" data-trigger="hover" data-content="First Name, Last Name">' +
                         p[key] + '</span>';
                 } else if (key == 'timestamp') {
                     td.innerHTML = '<div class="small text-muted">18/09/2018</div><strong>' +

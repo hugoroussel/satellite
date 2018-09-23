@@ -120,7 +120,7 @@ class Satellite : public eosio::contract {
 
 
   inline string strReplace(string str1,string str2){
-    return str1 == ""? str2: str1;
+    return str2 == ""? str1: str2;
   }
    //##################EMPLOYEES RELATED END##################//
 

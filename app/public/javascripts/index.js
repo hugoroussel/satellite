@@ -12,8 +12,8 @@ const Chain = require('./chain');
 Chain.getData()
     .then(console.log);
 
-Chain.getDependencies()
-    .then(console.log);
+// Chain.getDependencies()
+//     .then(console.log);
 
 // Crypto usage
 // let pair = Crypto.newKeyPair(8 * 100);

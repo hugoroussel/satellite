@@ -11,7 +11,7 @@ const eos = Eos(conf);
 const contractName = "satelliteacc";
 var exports = {};
 
-exports.newEmployee = function (userAcc, firstname, lastname, address, nationality, gender, martial, children, blood, email, phone) {
+exports.newEmployee = function (userAcc, firstname, lastname, address, nationality, gender, martial, children, blood, email, phone, sens, notSens, accessor) {
     let args = {
         person: userAcc,
         hash_first_name: firstname,
@@ -23,12 +23,23 @@ exports.newEmployee = function (userAcc, firstname, lastname, address, nationali
         hash_children_number: children,
         hash_blodd_type: blood,
         hash_email: email,
-        hash_phone_num: phone
+        hash_phone_num: phone,
+        sensitive: sens,
+        not_sensitive: notSens,
+        accessor: accessor
     }
 
     return eos.contract(contractName)
         .then(acc => acc.add(args, { authorization: userAcc + "@active" }))
         .then(console.log)
+}
+
+
+
+exports.newRequest = function (from, to, hashdes, sensitive) {
+    return eos.contract('satelliteacc')
+        .then(acc => acc.addreq(from, to, hashdes, sensitive, false))
+        .then(console.log);
 }
 
 exports.deleteEmployee = function (userAcc) {
@@ -88,6 +99,36 @@ exports.getDependencies = function () {
                 }
             });
         });
+}
+
+exports.getRow = function (target, accessor) {
+    return eos.getTableRows({
+        code: contractName,
+        scope: contractName,
+        table: 'employee',
+        json: true,
+    })
+        .then(res => {
+            return res.rows.filter(elem => {
+                return elem._person == target && elem._accessor == accessor;
+            });
+        })
+        .then(res => res[0]);
+}
+
+exports.getRequest = function (hashDescription) {
+    return eos.getTableRows({
+        code: contractName,
+        scope: contractName,
+        table: 'requests',
+        json: true,
+    })
+        .then(res => {
+            return res.rows.filter(elem => {
+                return elem._hash_description == hashDescription;
+            });
+        })
+        .then(res => res[0]);
 }
 
 module.exports = exports;

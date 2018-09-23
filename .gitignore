@@ -3,6 +3,7 @@
 
 # Node
 node_modules/
+app/package-lock.json
 
 # UI
 app/public/dist/

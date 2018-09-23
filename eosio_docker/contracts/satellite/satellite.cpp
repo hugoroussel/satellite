@@ -145,13 +145,17 @@ class Satellite : public eosio::contract {
    ///@abi action
    void delrequest(account_name from, account_name to, string hashdesc, bool sensitive, bool acceptedbydpo){
      _requests requests_tables(_self,_self);
-     for (auto i=requests_tables.begin();i!=requests_tables.end();) {
-       if(i->_hash_description==hashdesc && i->_from==from && i->_to==to && i->_sensitive == sensitive && i->_acceptedbydpo == acceptedbydpo){
-         requests_tables.erase(i);
 
-       }
-       print("Request deleted.");
-   }
+   auto ite = requests_tables.begin();
+   while(ite != requests_tables.end()) {
+
+     if(ite->_hash_description==hashdesc && ite->_from==from && ite->_to==to && ite->_sensitive == sensitive && ite->_acceptedbydpo == acceptedbydpo){
+       ite = requests_tables.erase(ite);
+     }else{
+       ite++;
+     }
+
+    }
  }
 
 

@@ -4,7 +4,7 @@ function getDependencies(userAcc) {
     Chain.getDependencies()
         .then(elems => {
             return elems.filter(elem => {
-                return elem.account == userAcc;
+                return elem.target == userAcc;
             })
         })
         .then(displayDependencies);

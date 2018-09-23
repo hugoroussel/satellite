@@ -1,7 +1,7 @@
 const Eos = require('../../node_modules/eosjs');
 
-const userAcc = "useraaaaaaaa";
-const privateKey = "5K7mtrinTFrVTduSxizUc5hjXJEtTjVTsqSHeBHes1Viep86FP5";
+const userAcc = "employee1111";
+const privateKey = "5KLqT1UFxVnKRWkjvhFur4sECrPhciuUqsYRihc1p9rxhXQMZBg";
 const conf = {
     keyProvider: privateKey,
     httpEndpoint: 'http://127.0.0.1:8888'
@@ -11,11 +11,24 @@ const eos = Eos(conf);
 const contractName = "satelliteacc";
 var exports = {};
 
-exports.newEmployee = function (userAcc, name) {
+exports.newEmployee = function (userAcc, firstname, lastname, address, nationality, gender, martial, children, blood, email, phone) {
+    let args = {
+        person: userAcc,
+        hash_first_name: firstname,
+        hash_last_name: lastname,
+        hash_address: address,
+        hash_nationality: nationality,
+        hash_gender: gender,
+        hash_martial_status: martial,
+        hash_children_number: children,
+        hash_blodd_type: blood,
+        hash_email: email,
+        hash_phone_num: phone
+    }
+
     return eos.contract(contractName)
-        .then(acc => acc.add(userAcc, name, { authorization: userAcc + "@active" }))
+        .then(acc => acc.add(args, { authorization: userAcc + "@active" }))
         .then(console.log)
-        .catch(console.log);
 }
 
 exports.deleteEmployee = function (userAcc) {
@@ -50,19 +63,31 @@ exports.getRequests = function () {
         });
 }
 
+exports.getData = function (userAcc, accessor) {
+    return eos.getTableRows({
+        code: contractName,
+        scope: contractName,
+        table: 'employee',
+        json: true,
+    })
+        .then(res => res.rows)
+}
+
 exports.getDependencies = function () {
     return eos.getTableRows({
         code: contractName,
         scope: contractName,
-        table: '_employees',
+        table: 'employee',
         json: true,
     })
         .then(res => {
-            res.map(elem => {
-                console.log(elem);
-                return elem[0];
+            return res.rows.map(elem => {
+                return {
+                    target: elem._person,
+                    accessor: elem._accessor
+                }
             });
-        })
+        });
 }
 
 module.exports = exports;

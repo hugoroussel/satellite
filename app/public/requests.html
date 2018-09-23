@@ -35,20 +35,6 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <style>
-        .badge {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
-.ccenter{
-    text-align: center;
-}
-        </style>
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -110,30 +96,71 @@
             </nav>
         </div>
         <main class="main">
-            
             <!-- Breadcrumb-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">Home</li>
                 <li class="breadcrumb-item">
                     <a href="info.html">Bob</a>
                 </li>
-                <li class="breadcrumb-item active">Permissions</li>
+                <li class="breadcrumb-item active">Requests</li>
             </ol>
 
             <div class="container-fluid">
                 <div class="animated fadeIn">
                     <div class="row">
-
-                        <div class="col-lg-6">
+                        <!-- /.row-->
+                        <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <i class="fa fa-align-justify"></i> Your chain of trust</div>
+                                    <strong>Request </strong>
+                                    <small>Form</small>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="form-group col-sm-6">
+                                                <label for="target">Target individual</label>
+                                                <input class="form-control" id="target" type="text" placeholder="John Doe">
+                                            </div>
+                                            <div class="form-group col-sm-6">
+                                                <label for="marital">Sensitivity</label>
+                                                <select class="form-control" id="sensitivity">
+                                                    <option selected>Basic</option>
+                                                    <option>Sensitive</option>>
+                                                </select>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                                <label for="motivation">Motivation</label>
+                                                <textarea class="form-control" id="motivation" rows="3"></textarea>
+                                            </div>
+                                    </form>
+                                </div>
+                                <div class="card-footer">
+                                    <button class="btn btn-sm btn-primary" type="submit">
+                                        <i class="fa fa-dot-circle-o"></i> Submit</button>
+                           
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.col-->
+                        <!-- ./col -->
+                    </div>
+                    <!-- /.row-->
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fa fa-align-justify"></i> Pending requests</div>
                                 <div class="card-body">
                                     <table class="table table-responsive-sm table-striped">
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Date granted</th>
+                                                <th>Date requested</th>
                                                 <th>Type</th>
                                             </tr>
                                         </thead>
@@ -201,90 +228,9 @@
                             </div>
                         </div>
                         <!-- /.col-->
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <i class="fa fa-align-justify"></i> The chain you're part of</div>
-                                <div class="card-body">
 
-                                    <table class="table table-responsive-sm table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Date granted</th>
-                                                <th>Type</th>
-                                                <th class='ccenter'>Report</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Yiorgos Avraamu</td>
-                                                <td>2012/01/01</td>
-                                                <td>
-                                                    <span class="badge badge-secondary" data-toggle="popover"
-                                                        data-trigger="hover" data-content="First name, Last name, Country">Basic</span>
-                                                </td>
-                                                <td class='ccenter'>
-                                                    <button class="btn btn-sm btn-danger" onclick="handleRemoval(this)">
-                                                        <i class="fa fa-times"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Avram Tarasios</td>
-                                                <td>2012/02/01</td>
-                                                <td>
-                                                    <span class="badge badge-warning" data-toggle="popover"
-                                                        data-trigger="hover" data-content="Phone number, Address">Sensitive</span>
-                                                </td>
-                                                <td class='ccenter'>
-                                                    <button class="btn btn-sm btn-danger" onclick="handleRemoval(this)">
-                                                        <i class="fa fa-times"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Quintin Ed</td>
-                                                <td>2012/02/01</td>
-                                                <td>
-                                                    <span class="badge badge-secondary" data-toggle="popover"
-                                                        data-trigger="hover" data-content="First name, Last name">Basic</span>
-                                                </td>
-                                                <td class='ccenter'>
-                                                    <button class="btn btn-sm btn-danger" onclick="handleRemoval(this)">
-                                                        <i class="fa fa-times"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Enéas Kwadwo</td>
-                                                <td>2012/03/01</td>
-                                                <td>
-                                                    <span class="badge badge-warning" data-toggle="popover"
-                                                        data-trigger="hover" data-content="Phone number, Address, Gender, Marital status">Sensitive</span>
-                                                </td>
-                                                <td class='ccenter'>
-                                                    <button class="btn btn-sm btn-danger" onclick="handleRemoval(this)" >
-                                                        <i class="fa fa-times"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Agapetus Tadeáš</td>
-                                                <td>2012/01/21</td>
-                                                <td>
-                                                    <span class="badge badge-warning" data-toggle="popover"
-                                                        data-trigger="hover" data-content="Marital status, Number of children">Sensitive</span>
-                                                </td>
-                                                <td class='ccenter'>
-                                                    <button class="btn btn-sm btn-danger" onclick="handleRemoval(this)">
-                                                        <i class="fa fa-times"></i></button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.col-->
                         <!-- /.row-->
+
                     </div>
                 </div>
         </main>
@@ -297,28 +243,6 @@
         </div>
 
     </footer>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">You requested data removal.</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                        We will notify you as soon as your request status has changed. 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- CoreUI and necessary plugins-->
     <!-- <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
@@ -331,26 +255,6 @@
   <script src="node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
   <script src="js/main.js"></script> -->
     <script src="../dist/bundle.js"></script>
-    <script src="../javascripts/jquery.min.js"></script>
-    <script src="../javascripts/popper.min.js"></script>
-    <script src="../javascripts/bootstrap.min.js"></script>
-    <script>
-        var modalToggledOnce = false;
-
-        $(function () {
-            $('[data-toggle="popover"]').popover();
-        })
-
-        function handleRemoval(item) {
-            if (!modalToggledOnce) {
-                $('#exampleModalCenter').modal('toggle');
-            }
-            modalToggledOnce = true;
-            item.classList.remove("btn-danger");
-            item.classList.add("btn-warning");
-            item.innerHTML = "<i class='fa fa-spinner'></i>"
-        }
-    </script>
 </body>
 
 </html>

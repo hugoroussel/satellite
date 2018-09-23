@@ -37,7 +37,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <style>
-            .badge {
+        .badge {
       -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */
          -khtml-user-select: none; /* Konqueror HTML */
@@ -59,7 +59,7 @@
         </button>
         <a class="navbar-brand" href="#">
             <img class="navbar-brand-full" src="../img/brand/logo.svg" width="89" height="25" alt="CoreUI Logo">
-             
+
         </a>
 
         <ul class="nav navbar-nav d-md-down-none">
@@ -85,12 +85,12 @@
                             <i class="nav-icon icon-speedometer"></i> Dashboard
                         </a>
                     </li>
-                    
+
                     <li class="nav-item">
                         <a class="nav-link" href="info.html">
                             <i class="nav-icon icon-user"></i> My Info</a>
                     </li>
-         
+
                     <li class="nav-item">
                         <a class="nav-link" href="requests.html">
                             <i class="nav-icon icon-user-follow"></i> Manage Requests</a>
@@ -115,8 +115,6 @@
 
             <div class="container-fluid">
                 <div class="animated fadeIn">
-                    
-
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
@@ -126,192 +124,193 @@
                                     <table class="table table-responsive-sm table-striped">
                                         <thead>
                                             <tr>
-                                                    <th>User</th>
-                                                    <th>Target</th>
-                                                    <th>Motivation</th>
-                                                    <th>Sensitivity</th>
-                                                    <th>Timestamp</th>
+                                                <th>User</th>
+                                                <th>Target</th>
+                                                <th>Motivation</th>
+                                                <th>Sensitivity</th>
+                                                <th>Timestamp</th>
                                                 <th class='ccenter'>Validation</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id='requeststablebody'>
                                             <tr>
                                                 <td>Yiorgos Avraamu</td>
                                                 <td>
-                                                        <div>Bartolomé Sisa</div>
-                                                      </td>
-                                                    <td>
-                                                      <div class="clearfix">
+                                                    <div>Bartolomé Sisa</div>
+                                                </td>
+                                                <td>
+                                                    <div class="clearfix">
                                                         <i>HR needs access to the interns for data analitics purpose.</i>
-                                                      </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-secondary" data-toggle="popover"
-                                                            data-trigger="hover" data-content="First Name, Last Name">Basic</span>
-                                                    </td>
-                                                    <td>
-                                                      <div class="small text-muted">Yesterday</div>
-                                                      <strong>2:01pm</strong>
-                                                    </td>
-                                                
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-secondary" data-toggle="popover"
+                                                        data-trigger="hover" data-content="First Name, Last Name">Basic</span>
+                                                </td>
+                                                <td>
+                                                    <div class="small text-muted">Yesterday</div>
+                                                    <strong>2:01pm</strong>
+                                                </td>
+
                                                 <td class='ccenter'>
-                                                        <button class="btn btn-sm btn-success" onclick="handleValid(this)">
-                                                                <i class="fa fa-check"></i></button>
-                                                        <button class="btn btn-sm btn-danger" onclick="handleRefused(this)">
-                                                            <i class="fa fa-times"></i></button>
-                                                    </td>
-                                                    
+                                                    <button class="btn btn-sm btn-success" onclick="handleValid(this)">
+                                                        <i class="fa fa-check"></i></button>
+                                                    <button class="btn btn-sm btn-danger" onclick="handleRefused(this)">
+                                                        <i class="fa fa-times"></i></button>
+                                                </td>
+
                                             </tr>
                                             <tr>
                                                 <td>Avram Tarasios</td>
                                                 <td>
-                                                        <div>Magnus Rosati</div>
-                                                      </td>
-                                                      
-                                                      <td>
-                                                        <div class="clearfix">
-                                                          <i>Ice-breaking on next sunday. Need to call Magnus.</i>
-                                                        </div>
-                                                      </td>
-                                                      <td>
-                                                          <span class="badge badge-secondary" data-toggle="popover"
-                                                              data-trigger="hover" data-content="First Name, Last Name">Basic</span>
-                                                      </td>
-                                                      <td>
-                                                        <div class="small text-muted">Yesterday</div>
-                                                        <strong>1:20pm</strong>
-                                                      </td>
+                                                    <div>Magnus Rosati</div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="clearfix">
+                                                        <i>Ice-breaking on next sunday. Need to call Magnus.</i>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-secondary" data-toggle="popover"
+                                                        data-trigger="hover" data-content="First Name, Last Name">Basic</span>
+                                                </td>
+                                                <td>
+                                                    <div class="small text-muted">Yesterday</div>
+                                                    <strong>1:20pm</strong>
+                                                </td>
                                                 <td class='ccenter'>
-                                                        <button class="btn btn-sm btn-success" onclick="handleValid(this)">
-                                                                <i class="fa fa-check"></i></button>
-                                                        <button class="btn btn-sm btn-danger" onclick="handleRefused(this)">
-                                                            <i class="fa fa-times"></i></button>
-                                                    </td>
+                                                    <button class="btn btn-sm btn-success" onclick="handleValid(this)">
+                                                        <i class="fa fa-check"></i></button>
+                                                    <button class="btn btn-sm btn-danger" onclick="handleRefused(this)">
+                                                        <i class="fa fa-times"></i></button>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>Quintin Ed</td>
                                                 <td>
-                                                        <div>Wagner Mal</div>
-                                                      </td>
-                                                    <td>
-                                                      <div class="clearfix">
+                                                    <div>Wagner Mal</div>
+                                                </td>
+                                                <td>
+                                                    <div class="clearfix">
                                                         <i>Gathering data for the next bicycle tour. Medical care.</i>
-                                                      </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-warning" data-toggle="popover"
-                                                            data-trigger="hover" data-content="First Name, Last Name">Sensitive</span>
-                                                    </td>
-                                                    <td>
-                                                      <div class="small text-muted">Yesterday</div>
-                                                      <strong>9:21am</strong>
-                                                    </td>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-warning" data-toggle="popover"
+                                                        data-trigger="hover" data-content="First Name, Last Name">Sensitive</span>
+                                                </td>
+                                                <td>
+                                                    <div class="small text-muted">Yesterday</div>
+                                                    <strong>9:21am</strong>
+                                                </td>
                                                 <td class='ccenter'>
-                                                        <button class="btn btn-sm btn-success" onclick="handleValid(this)">
-                                                                <i class="fa fa-check"></i></button>
-                                                        <button class="btn btn-sm btn-danger" onclick="handleRefused(this)">
-                                                            <i class="fa fa-times"></i></button>
-                                                    </td>
+                                                    <button class="btn btn-sm btn-success" onclick="handleValid(this)">
+                                                        <i class="fa fa-check"></i></button>
+                                                    <button class="btn btn-sm btn-danger" onclick="handleRefused(this)">
+                                                        <i class="fa fa-times"></i></button>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>Enéas Kwadwo</td>
                                                 <td>
-                                                        <div>Stradimov Lus</div>
-                                                      </td>
-                                                    <td>
-                                                      <div class="clearfix">
+                                                    <div>Stradimov Lus</div>
+                                                </td>
+                                                <td>
+                                                    <div class="clearfix">
                                                         <i>We must check the birthday !</i>
-                                                      </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-warning" data-toggle="popover"
-                                                            data-trigger="hover" data-content="First Name, Last Name">Sensitive</span>
-                                                    </td>
-                                                    <td>
-                                                      <div class="small text-muted">21/09/2018</div>
-                                                      <strong>9:23pm</strong>
-                                                    </td>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-warning" data-toggle="popover"
+                                                        data-trigger="hover" data-content="First Name, Last Name">Sensitive</span>
+                                                </td>
+                                                <td>
+                                                    <div class="small text-muted">21/09/2018</div>
+                                                    <strong>9:23pm</strong>
+                                                </td>
                                                 <td class='ccenter'>
-                                                        <button class="btn btn-sm btn-success" onclick="handleValid(this)">
-                                                                <i class="fa fa-check"></i></button>
-                                                        <button class="btn btn-sm btn-danger" onclick="handleRefused(this)">
-                                                            <i class="fa fa-times"></i></button>
-                                                    </td>
+                                                    <button class="btn btn-sm btn-success" onclick="handleValid(this)">
+                                                        <i class="fa fa-check"></i></button>
+                                                    <button class="btn btn-sm btn-danger" onclick="handleRefused(this)">
+                                                        <i class="fa fa-times"></i></button>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>Agapetus Tadeáš</td>
                                                 <td>
-                                                        <div>Greta Diego</div>
-                                                      </td>
-                                                    <td>
-                                                      <div class="clearfix">
+                                                    <div>Greta Diego</div>
+                                                </td>
+                                                <td>
+                                                    <div class="clearfix">
                                                         <i>Needs information to compute taxes.</i>
-                                                      </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-warning" data-toggle="popover"
-                                                            data-trigger="hover" data-content="First Name, Last Name">Sensitive</span>
-                                                    </td>
-                                                    <td>
-                                                      <div class="small text-muted">21/09/2018</div>
-                                                      <strong>2:48am</strong>
-                                                    </td>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-warning" data-toggle="popover"
+                                                        data-trigger="hover" data-content="First Name, Last Name">Sensitive</span>
+                                                </td>
+                                                <td>
+                                                    <div class="small text-muted">21/09/2018</div>
+                                                    <strong>2:48am</strong>
+                                                </td>
                                                 <td class='ccenter'>
-                                                        <button class="btn btn-sm btn-success" onclick="handleValid(this)">
-                                                                <i class="fa fa-check"></i></button>
-                                                        <button class="btn btn-sm btn-danger" onclick="handleRefused(this)">
-                                                            <i class="fa fa-times"></i></button>
-                                                    </td>
+                                                    <button class="btn btn-sm btn-success" onclick="handleValid(this)">
+                                                        <i class="fa fa-check"></i></button>
+                                                    <button class="btn btn-sm btn-danger" onclick="handleRefused(this)">
+                                                        <i class="fa fa-times"></i></button>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>Agapetus Tadeáš</td>
                                                 <td>
-                                                        <div>Bali Mose</div>
-                                                      </td>
-                                                    <td>
-                                                      <div class="clearfix">
+                                                    <div>Bali Mose</div>
+                                                </td>
+                                                <td>
+                                                    <div class="clearfix">
                                                         <i>Survey on gender and ages of all the employees.</i>
-                                                      </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-secondary" data-toggle="popover"
-                                                            data-trigger="hover" data-content="First Name, Last Name">Basic</span>
-                                                    </td>
-                                                    <td>
-                                                      <div class="small text-muted">18/09/2018</div>
-                                                      <strong>4:11pm</strong>
-                                                    </td>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-secondary" data-toggle="popover"
+                                                        data-trigger="hover" data-content="First Name, Last Name">Basic</span>
+                                                </td>
+                                                <td>
+                                                    <div class="small text-muted">18/09/2018</div>
+                                                    <strong>4:11pm</strong>
+                                                </td>
                                                 <td class='ccenter'>
-                                                        <button class="btn btn-sm btn-success" onclick="handleValid(this)">
-                                                                <i class="fa fa-check"></i></button>
-                                                        <button class="btn btn-sm btn-danger" onclick="handleRefused(this)">
-                                                            <i class="fa fa-times"></i></button>
-                                                    </td>
+                                                    <button class="btn btn-sm btn-success" onclick="handleValid(this)">
+                                                        <i class="fa fa-check"></i></button>
+                                                    <button class="btn btn-sm btn-danger" onclick="handleRefused(this)">
+                                                        <i class="fa fa-times"></i></button>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>Agapetus Tadeáš</td>
                                                 <td>
-                                                        <div>Gondo Lon</div>
-                                                      </td>
-                                                    <td>
-                                                      <div class="clearfix">
-                                                        <i>Holiday checks, we need to know how many children the employees have.</i>
-                                                      </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="badge badge-warning" data-toggle="popover"
-                                                            data-trigger="hover" data-content="First Name, Last Name">Sensitive</span>
-                                                    </td>
-                                                    <td>
-                                                      <div class="small text-muted">18/09/2018</div>
-                                                      <strong>10:34am</strong>
-                                                    </td>
+                                                    <div>Gondo Lon</div>
+                                                </td>
+                                                <td>
+                                                    <div class="clearfix">
+                                                        <i>Holiday checks, we need to know how many children the
+                                                            employees have.</i>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-warning" data-toggle="popover"
+                                                        data-trigger="hover" data-content="First Name, Last Name">Sensitive</span>
+                                                </td>
+                                                <td>
+                                                    <div class="small text-muted">18/09/2018</div>
+                                                    <strong>10:34am</strong>
+                                                </td>
                                                 <td class='ccenter'>
-                                                        <button class="btn btn-sm btn-success" onclick="handleValid(this)">
-                                                                <i class="fa fa-check"></i></button>
-                                                        <button class="btn btn-sm btn-danger" onclick="handleRefused(this)">
-                                                            <i class="fa fa-times"></i></button>
-                                                    </td>
+                                                    <button class="btn btn-sm btn-success" onclick="handleValid(this)">
+                                                        <i class="fa fa-check"></i></button>
+                                                    <button class="btn btn-sm btn-danger" onclick="handleRefused(this)">
+                                                        <i class="fa fa-times"></i></button>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -347,21 +346,13 @@
   <script src="node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
   <script src="js/main.js"></script> -->
     <script src="../dist/bundle.js"></script>
-    <script src="../dist/bundle.js"></script>
     <script src="../javascripts/jquery.min.js"></script>
     <script src="../javascripts/popper.min.js"></script>
     <script src="../javascripts/bootstrap.min.js"></script>
+    <script src="../javascripts/dpo.js"></script>
+
     <script>
-
-        function handleValid(item) {
-          
-            console.log("Validated")
-        }
-        function handleRefused(item) {
-           
-            console.log("Refused")
-
-        }
+        
     </script>
 </body>
 

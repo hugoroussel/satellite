@@ -2,8 +2,8 @@ const axios = require('axios');
 
 var exports = {};
 
-exports.newPii = function (hash, encrypted) {
-    axios.post('/post-pii', {
+module.exports.newPii = function (hash, encrypted) {
+    return axios.post('/post-pii', {
         hash: hash,
         encrypted: encrypted
     });

@@ -36,8 +36,10 @@ function populateTableBody(tableBodyID, json_obj, spec) {
             if (p.hasOwnProperty(key)) {
                 var td = document.createElement('td');
                 if (key == 'motivation') {
+                    td.setAttribute['motivation'] = p[key];
                     td.innerHTML = '<i>' + p[key] + '</i>';
                 } else if (key == 'sensitivity') {
+                    td.setAttribute['sensitivity'] = p[key];
                     td.innerHTML =
                         '<span class="badge badge-secondary" data-toggle="popover" data-trigger="hover" data-content="First Name, Last Name">' +
                         p[key] + '</span>';

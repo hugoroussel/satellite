@@ -34,4 +34,9 @@ router.get('/get-accepted-by-dpo', function (req, res) {
   return res.send(req.app.acceptedbydpo);
 });
 
+router.get('/cancel-accepted-by-dpo', function (req, res) {
+  req.app.acceptedbydpo = null;
+  return res.send('ok');
+});
+
 module.exports = router;

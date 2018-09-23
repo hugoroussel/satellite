@@ -325,6 +325,7 @@
             item.classList.remove("btn-success");
             item.classList.add("btn-danger");
             item.innerHTML = "<i class='fa fa-times'></i>"
+            $.get('/cancel-accepted-by-dpo');
         }
 
         function handleRemoval(item) {

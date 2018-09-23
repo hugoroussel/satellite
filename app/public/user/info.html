@@ -44,18 +44,18 @@
         </button>
         <a class="navbar-brand" href="#">
             <img class="navbar-brand-full" src="../img/brand/logo.svg" width="89" height="25" alt="CoreUI Logo">
-             
+
         </a>
 
         <ul class="nav navbar-nav d-md-down-none">
-                <div>Bob</div>
+            <div>Bob</div>
 
-                <li class="nav-item px-3">
-                    <div class="avatar">
-                        <img class="img-avatar" src="../img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
-                        <span class="avatar-status badge-success"></span>
-                    </div>
-                </li>
+            <li class="nav-item px-3">
+                <div class="avatar">
+                    <img class="img-avatar" src="../img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
+                    <span class="avatar-status badge-success"></span>
+                </div>
+            </li>
         </ul>
 
     </header>
@@ -63,12 +63,12 @@
         <div class="sidebar">
             <nav class="sidebar-nav">
                 <ul class="nav">
-                        <li class="nav-title"></li>
-                        <li class="nav-item" style='text-align: center;'>
-                            <a href="../dpo/index.html"><span class="badge badge-pill badge-info">App as a DPO</span></a>&nbsp;
-                            <a href="../user/index.html"><span class="badge badge-pill badge-warning" >App as a user</span></a>
-                        </li>
-                        <li class="nav-title"></li>
+                    <li class="nav-title"></li>
+                    <li class="nav-item" style='text-align: center;'>
+                        <a href="../dpo/index.html"><span class="badge badge-pill badge-info">App as a DPO</span></a>&nbsp;
+                        <a href="../user/index.html"><span class="badge badge-pill badge-warning">App as a user</span></a>
+                    </li>
+                    <li class="nav-title"></li>
                     <li class="nav-title">User</li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">
@@ -79,7 +79,7 @@
                         <a class="nav-link" href="notifications.html">
                             <i class="nav-icon icon-bell"></i> Notifications</a>
                     </li>
-                     
+
                     <li class="nav-item">
                         <a class="nav-link" href="info.html">
                             <i class="nav-icon icon-user"></i> My Info</a>
@@ -121,43 +121,48 @@
                                     <strong>My Information</strong>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form id='info-form'>
                                         <div class="row">
                                             <div class="form-group col-sm-6">
                                                 <label for="firstname">First name</label>
-                                                <input class="form-control" id="firstname" type="text" placeholder="John" disabled value='Bob'>
+                                                <input class="form-control" id="firstname" type="text" placeholder="John"
+                                                    disabled value='Bob'>
                                             </div>
                                             <div class="form-group col-sm-6">
                                                 <label for="lastname">Last Name</label>
-                                                <input class="form-control" id="lastname" type="text" placeholder="Doe" disabled value='Smith'> 
+                                                <input class="form-control" id="lastname" type="text" placeholder="Doe"
+                                                    disabled value='Smith'>
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" id="street">
                                             <label for="street">Street</label>
-                                            <input class="form-control" id="street" type="text" placeholder="Exhibition Rd, Kensington" value='48 Leicester Square'>
+                                            <input class="form-control" type="text" placeholder="Exhibition Rd, Kensington"
+                                                value='48 Leicester Square'>
                                         </div>
                                         <div class="row">
-                                            <div class="form-group col-sm-4">
+                                            <div class="form-group col-sm-4" id="city">
                                                 <label for="city">City</label>
-                                                <input class="form-control" id="city" type="text" placeholder="London" value='London'>
+                                                <input class="form-control" type="text" placeholder="London" value='London'>
                                             </div>
-                                            <div class="form-group col-sm-4">
+                                            <div class="form-group col-sm-4" id="postalcode">
                                                 <label for="postalcode">Postal Code</label>
-                                                <input class="form-control" id="postalcode" type="text" placeholder="SW7 2DD" value='WC2H 7LU'>
+                                                <input class="form-control" type="text" placeholder="SW7 2DD" value='WC2H 7LU'>
                                             </div>
-                                            <div class="form-group col-sm-4">
+                                            <div class="form-group col-sm-4" id="country">
                                                 <label for="country">Country</label>
-                                                <input class="form-control" id="country" type="text" placeholder="England">
+                                                <input class="form-control" type="text" placeholder="England">
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-sm-3">
                                                 <label for="birthdate">Birthdate</label>
-                                                <input class="form-control" id="birthdate" type="text" placeholder="06/21/1991" disabled>
+                                                <input class="form-control" id="birthdate" type="text" placeholder="06/21/1991"
+                                                    disabled>
                                             </div>
                                             <div class="form-group col-sm-9">
                                                 <label for="nationality">Nationality</label>
-                                                <input class="form-control" id="nationality" type="text" placeholder="English" disabled>
+                                                <input class="form-control" id="nationality" type="text" placeholder="English"
+                                                    disabled>
                                             </div>
 
                                         </div>
@@ -183,7 +188,8 @@
 
                                             <div class="form-group col-sm-3">
                                                 <label for="children">Number of children</label>
-                                                <input class="form-control" id="children" type="text" placeholder="0" disabled>
+                                                <input class="form-control" id="children" type="text" placeholder="0"
+                                                    disabled>
                                             </div>
 
                                             <div class="form-group col-sm-3">
@@ -202,13 +208,13 @@
                                         </div>
 
                                         <div class="row">
-                                            <div class="form-group col-sm-6">
+                                            <div class="form-group col-sm-6" id="email">
                                                 <label for="email">Private email</label>
-                                                <input class="form-control" id="email" type="email" placeholder="bob.smith@eos.io">
+                                                <input class="form-control" type="email" placeholder="bob.smith@eos.io">
                                             </div>
-                                            <div class="form-group col-sm-6">
+                                            <div class="form-group col-sm-6" id="phone">
                                                 <label for="phone">Phone number</label>
-                                                <input class="form-control" id="phone" type="text" placeholder="02072343456">
+                                                <input class="form-control" type="text" placeholder="02072343456">
                                             </div>
 
                                         </div>
@@ -216,10 +222,10 @@
                                 </div>
                                 <div class="card-footer">
                                     <button class="btn btn-sm btn-primary" type="submit">
-                                      <i class="fa fa-dot-circle-o"></i> Save changes</button>
-                                    <button class="btn btn-sm btn-danger" type="button">
-                                      <a href="info.html" style='color:white;'>Cancel</a></button>
-                                  </div>
+                                        <i class="fa fa-dot-circle-o"></i> Save changes</button>
+                                    <button class="btn btn-sm btn-danger" type="button" onclick="requestRemoval();">
+                                        <span style='color:white;'>Request data removal</span></button>
+                                </div>
                             </div>
                         </div>
                         <!-- /.col-->
@@ -229,6 +235,27 @@
                     </div>
                 </div>
         </main>
+    </div>
+
+    <div class="modal fade" id="modalRemovalRequested" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Pending <i class='fa fa-spinner' style='color:rgb(255, 145, 0);'></i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Some of the data has been deleted. The rest remains however important while working for the
+                    company, the DPO will review your request.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
     <footer class="app-footer" style='color:rgba(0,0,0,0.6);'>
         <div class="ml-auto">
@@ -249,7 +276,24 @@
     <!-- <script src="node_modules/chart.js/dist/Chart.min.js"></script>
   <script src="node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
   <script src="js/main.js"></script> -->
-  <script src="../dist/bundle.js"></script>
+    <script src="../dist/bundle.js"></script>
+    <script src="../javascripts/jquery.min.js"></script>
+    <script src="../javascripts/popper.min.js"></script>
+    <script src="../javascripts/bootstrap.min.js"></script>
+
+    <script>
+
+        function requestRemoval() {
+            $('#modalRemovalRequested').modal('toggle');
+            $('#street').remove();
+            $('#city').remove();
+            $('#postalcode').remove();
+            $('#country').remove();
+            $('#phone').remove();
+            $('#email').remove();
+        }
+
+    </script>
 </body>
 
 </html>

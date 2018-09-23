@@ -105,29 +105,29 @@ class Satellite : public eosio::contract {
 }
 
    //should remove a specific record
+   // should change this because we must check all the place where that dude is
    ///@abi action
    void deleterec(account_name person){
      //require_auth(_person)
      _employees employees_table(_self, _self);
-     auto iterator = employees_table.find(person);
-     eosio_assert(iterator != employees_table.end(), "No such employee in the table");
-
-     employees_table.erase(iterator);
-     print("Employee record deleted.");
+     for (auto iterator = employees_table.begin();iterator !=employees_table.end();){
+       if(iterator->_accessor == person || iterator->_person == person){
+         employees_table.erase(iterator);
+       }else{
+         iterator++;
+       }
+     }
+     print("Employee records deleted.");
 
 
    }
 
-
-  inline string strReplace(string str1,string str2){
-    return str1 == ""? str2: str1;
-  }
    //##################EMPLOYEES RELATED END##################//
 
    //##################REQUESTS RELATED ##################//
 
    ///@abi action
-   void addreq(account_name from, account_name to, string hashdes, bool sensitive, bool acceptedbydpo){
+   void addreq(account_name from, account_name to, string hashdes, bool sensitive){
      _requests requests_tables(_self,_self);
      //auto iterator = requests_tables.find()
 
@@ -136,58 +136,62 @@ class Satellite : public eosio::contract {
        req._to = to;
        req._hash_description = hashdes;
        req._sensitive = sensitive;
-       req._acceptedbydpo = acceptedbydpo;
      });
      print("New request added.");
    }
 
 
    ///@abi action
-   void delrequest(account_name from, account_name to, string hashdesc, bool sensitive, bool acceptedbydpo){
+   void delrequest(account_name from, account_name to, string hashdesc){
      _requests requests_tables(_self,_self);
      for (auto i=requests_tables.begin();i!=requests_tables.end();) {
-       if(i->_hash_description==hashdesc && i->_from==from && i->_to==to && i->_sensitive == sensitive && i->_acceptedbydpo == acceptedbydpo){
+       if(i->_hash_description==hashdesc && i->_from==from && i->_to==to){
          requests_tables.erase(i);
-
+       }else{
+         i++;
        }
        print("Request deleted.");
-   }
- }
+      }
+    }
 
-
-    void acceptreq(
-        account_name from,
-        account_name to,
-        string hashdesc,
-        bool sensitives,
-        bool acceptedbydpo,
-        account_name person,
-        string hash_first_name,
-        string hash_last_name,
-        string hash_address,
-        string hash_nationality,
-        string hash_gender,
-        string hash_martial_status,
-        string hash_children_number,
-        string hash_blodd_type,
-        string hash_email,
-        string hash_phone_num,
-        string sensitive,
-        string not_sensitive,
-        account_name accessor
-     ){
-       add(person,hash_first_name,hash_last_name,hash_address,
-         hash_nationality, hash_gender, hash_martial_status,
-         hash_children_number,hash_blodd_type, hash_email,
-         hash_phone_num,sensitive, not_sensitive, accessor);
-        delrequest(from, to ,hashdesc, sensitives, acceptedbydpo);
+    void performrequest(
+      account_name from,
+      account_name to,
+      string hashdesc,
+      account_name person,
+      string hash_first_name,
+      string hash_last_name,
+      string hash_address,
+      string hash_nationality,
+      string hash_gender,
+      string hash_martial_status,
+      string hash_children_number,
+      string hash_blodd_type,
+      string hash_email,
+      string hash_phone_num,
+      string sensitive,
+      string not_sensitive,
+      account_name accessor
+    ){ 
+      add(person,hash_first_name,hash_last_name,hash_address,
+        hash_nationality, hash_gender, hash_martial_status,
+        hash_children_number,hash_blodd_type, hash_email,
+        hash_phone_num,sensitive, not_sensitive, accessor);
+      delrequest(from, to ,hashdesc);
 
     }
 
-    void reqacceptedbydpo(account_name from, account_name to, string hashdesc, bool sensitive, bool acceptedbydpo){
+    void reqacceptedoneside(account_name from, account_name to, string hashdesc){
       _requests requests_tables(_self,_self);
-
+      for (auto i=requests_tables.begin();i!=requests_tables.end();i++) {
+        if(i->_hash_description==hashdesc && i->_from==from && i->_to==to){          
+          requests_tables.modify(i, _self, [&](auto& it){
+            it._acceptedbydpo = 1;
+          });
+        }
+      }
     }
+    
 
    //##################REQUESTS RELATED END ##################//
 
@@ -199,16 +203,13 @@ class Satellite : public eosio::contract {
        i  = employees_table.erase(i);
      }
      print("All data dropped.");
-
-
    }
 
 
    void printall(){
      _employees employees_table(_self,_self);
-     for (auto i=employees_table.begin();i!=employees_table.end();) {
+     for (auto i=employees_table.begin();i!=employees_table.end();i++) {
        print(name{i->_person});
-       i++;
      }
    }
 
@@ -247,7 +248,7 @@ class Satellite : public eosio::contract {
 
 
 
-   ///@abi table requests
+   ///@abi table request
    struct request{
      account_name _from;
      account_name _to;
@@ -262,6 +263,10 @@ class Satellite : public eosio::contract {
    typedef multi_index<N(request), request> _requests;
 
 
+  inline string strReplace(string str1,string str2){
+    return str1 == ""? str2: str1;
+  }
+
 };
 
-EOSIO_ABI( Satellite, (add)(update)(deleterec)(addreq)(delrequest)(acceptreq)(dropall)(printall))
+EOSIO_ABI( Satellite, (add)(update)(deleterec)(addreq)(delrequest)(dropall)(printall))

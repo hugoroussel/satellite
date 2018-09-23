@@ -27,14 +27,14 @@
   <link href="../stylesheets/style.css" rel="stylesheet">
   <!-- <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet"> -->
   <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
-<link rel="manifest" href="../img/favicon/site.webmanifest">
-<link rel="mask-icon" href="../img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="../img/favicon/favicon.ico">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="../img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="../img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -213,7 +213,9 @@
                             <i class="icon-people"></i>
                           </th>
                           <th>User</th>
-                          <th>Subject</th>
+                          <th>Target</th>
+                          <th>Motivation</th>
+                          <th>Sensitivity</th>
                           <th>Timestamp</th>
                         </tr>
                       </thead>
@@ -228,17 +230,23 @@
                           <td>
                             <div>Enéas Kwadwo</div>
                             <div class="small text-muted">
-                              <span>DPO</span></div>
+                              <span>User</span></div>
                           </td>
+                          <td>
+                              <div>Bartolomé Sisa</div>
+                            </td>
                           <td>
                             <div class="clearfix">
-                              <i>Follow-up, interns information access granted.</i>
+                              <i>HR needs access to the interns for data analitics purpose.</i>
                             </div>
                           </td>
-
+                          <td>
+                              <span class="badge badge-secondary" data-toggle="popover"
+                                  data-trigger="hover" data-content="First Name, Last Name">Basic</span>
+                          </td>
                           <td>
                             <div class="small text-muted">Yesterday</div>
-                            <strong>7:12pm</strong>
+                            <strong>2:01pm</strong>
                           </td>
                         </tr>
                         <tr>
@@ -251,17 +259,24 @@
                           <td>
                             <div>Agapetus Tadeáš</div>
                             <div class="small text-muted">
-                              <span>DPO</span></div>
+                              <span>User</span></div>
                           </td>
-
+                          <td>
+                            <div>Magnus Rosati</div>
+                          </td>
+                          
                           <td>
                             <div class="clearfix">
-                              <i>Successfully removed authorization of Marcus Miller to access your data.</i> 
+                              <i>Successfully removed authorization of Marcus Miller to access your data.</i>
                             </div>
                           </td>
                           <td>
+                              <span class="badge badge-secondary" data-toggle="popover"
+                                  data-trigger="hover" data-content="First Name, Last Name">Basic</span>
+                          </td>
+                          <td>
                             <div class="small text-muted">Yesterday</div>
-                            <strong>4:54pm</strong>
+                            <strong>1:20pm</strong>
                           </td>
                         </tr>
                         <tr>
@@ -274,16 +289,23 @@
                           <td>
                             <div>Friderik Dávid</div>
                             <div class="small text-muted">
-                              <span>DPO</span></div>
+                              <span>User</span></div>
                           </td>
                           <td>
+                              <div>Wagner Mal</div>
+                            </td>
+                          <td>
                             <div class="clearfix">
-                                <i>Accessing Steve Ballmer data : inadequate reasons.</i> 
+                              <i>Accessing Steve Ballmer data : inadequate reasons.</i>
                             </div>
                           </td>
                           <td>
+                              <span class="badge badge-warning" data-toggle="popover"
+                                  data-trigger="hover" data-content="First Name, Last Name">Sensitive</span>
+                          </td>
+                          <td>
                             <div class="small text-muted">Yesterday</div>
-                            <strong>11:23am</strong>
+                            <strong>9:21am</strong>
                           </td>
                         </tr>
                       </tbody>

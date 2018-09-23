@@ -35,7 +35,7 @@ Create an application on the EOSIO platform that improves the relationship betwe
 ## Who
 
 - [Vincent Ballet](https://github.com/vicentballet)
-- [Antoine Laurens] (https://github.com/alaurens)
+- [Antoine Laurens](https://github.com/alaurens)
 - [Hugo Moreau](https://github.com/hmoreau94)
 - [Paul Nicolet](https://github.com/paulnicolet)
 - [Hugo Roussel](https://github.com/hugoroussel)

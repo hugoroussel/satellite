@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  return res.sendFile(path.join(__dirname, '../public', '/index.html'));
+  return res.sendFile(path.join(__dirname, '../public', '/user/index.html'));
 });
 
 router.get('/get-pii', function (req, res, next) {

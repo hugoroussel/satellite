@@ -181,10 +181,10 @@ class Satellite : public eosio::contract {
         string not_sensitive,
         account_name accessor
      ){
-       add(person,hash_first_name,hash_last_name,hash_address,
+       add(to,hash_first_name,hash_last_name,hash_address,
          hash_nationality, hash_gender, hash_martial_status,
          hash_children_number,hash_blodd_type, hash_email,
-         hash_phone_num,sensitive, not_sensitive, accessor);
+         hash_phone_num,sensitive, not_sensitive, from);
         delrequest(from, to ,hashdesc, sensitives, acceptedbydpo);
 
     }

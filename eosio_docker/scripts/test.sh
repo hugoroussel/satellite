@@ -14,9 +14,8 @@ cleos push action satelliteacc add '["satelliteacc", "un", "deux", "trois", "qua
 cleos push action satelliteacc add '["paul", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "paul"]' -p satelliteacc@active
 cleos get table satelliteacc satelliteacc employee
 cleos push action satelliteacc addreq '["satelliteacc", "paul", "test", 1,1]' -p satelliteacc@active
-cleos push action satelliteacc addreq '["satelliteacc", "satelliteacc", "test1", 1,1]' -p satelliteacc@active
 cleos get table satelliteacc satelliteacc request
-cleos push action satelliteacc acceptreq '["satelliteacc", "satelliteacc", "test", 1,1,"satelliteacc", "findugame", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "satelliteacc"]' -p satelliteacc@active
+cleos push action satelliteacc acceptreq '["satelliteacc", "paul", "test", 1,1,"satelliteacc", "findugame", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "satelliteacc"]' -p satelliteacc@active
 cleos get table satelliteacc satelliteacc request
 cleos get table satelliteacc satelliteacc employee
 

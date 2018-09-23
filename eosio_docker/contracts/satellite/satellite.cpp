@@ -109,13 +109,14 @@ class Satellite : public eosio::contract {
    void deleterec(account_name person){
      //require_auth(_person)
      _employees employees_table(_self, _self);
-     auto iterator = employees_table.find(person);
-     eosio_assert(iterator != employees_table.end(), "No such employee in the table");
-
-     employees_table.erase(iterator);
-     print("Employee record deleted.");
-
-
+     for (auto iterator = employees_table.begin();iterator !=employees_table.end();){
+       if(iterator->_accessor == person || iterator->_person == person){
+         iterator = employees_table.erase(iterator);
+       }else{
+         iterator++;
+       }
+     }
+     print("Employee records deleted.");
    }
 
 
@@ -199,8 +200,13 @@ class Satellite : public eosio::contract {
    ///@abi action
    void dropall(){
      _employees employees_table(_self,_self);
+     _requests requests_tables(_self,_self);
+
      for (auto i=employees_table.begin();i!=employees_table.end();) {
        i  = employees_table.erase(i);
+     }
+     for (auto i=requests_tables.begin();i!=requests_tables.end();) {
+       i  = requests_tables.erase(i);
      }
      print("All data dropped.");
 

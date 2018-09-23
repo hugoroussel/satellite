@@ -115,9 +115,6 @@
 
             <div class="container-fluid">
                 <div class="animated fadeIn">
-
-                    <button class="btn btn-sm btn-success" onclick="addToTable('requeststablebody')">
-                        <i class="fa fa-heart"></i></button>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
@@ -356,76 +353,6 @@
 
     <script>
         
-        json_example = [{
-                "name": 'Bob',
-                'target': 'Alice',
-                'motivation': 'Make some crepe',
-                'sensitivity': 'Basic',
-                'timestamp': '2:01pm'
-            },
-            {
-                'name': 'Bob',
-                'target': 'Alice',
-                'motivation': 'Make some crepes',
-                'sensitivity': 'Basic',
-                'timestamp': '2:01pm'
-            },
-            {
-                "name": 'Bob',
-                'target': 'Alice',
-                'motivation': 'Make some crepe',
-                'sensitivity': 'Basic',
-                'timestamp': '2:01pm'
-            },
-            {
-                "name": 'Bob',
-                'target': 'Alice',
-                'motivation': 'Make some crepe',
-                'sensitivity': 'Basic',
-                'timestamp': '2:01pm'
-            }
-        ];
-
-
-
-
-        function addToTable(tableBodyID) {
-            console.log(json_example)
-            var oldTable = document.getElementById(tableBodyID);
-                newTable = document.createElement('tbody');
-                newTable.id = tableBodyID;
-            for (var i = 0; i < json_example.length; i++) {
-                var tr = document.createElement('tr');
-                p = json_example[i];
-                for (var key in p) {
-                    if (p.hasOwnProperty(key)) {
-                        var td = document.createElement('td');
-                        if (key == 'motivation') {
-                            td.innerHTML = '<i>' + p[key] + '</i>';
-                        } else if (key == 'sensitivity') {
-                            td.innerHTML =
-                                '<span class="badge badge-secondary" data-toggle="popover" data-trigger="hover" data-content="First Name, Last Name">' +
-                                p[key] + '</span>';
-                        } else if (key == 'timestamp') {
-                            td.innerHTML = '<div class="small text-muted">18/09/2018</div><strong>' +
-                                p[key] +
-                                '</strong>';
-                        } else {
-                            td.innerHTML = p[key];
-                        }
-                        tr.appendChild(td);
-                    }
-                }
-                var td = document.createElement('td');
-                td.classList.add('ccenter');
-                td.innerHTML =
-                    '<button class="btn btn-sm btn-success" onclick="handleValid(this)"> <i class="fa fa-check"></i></button> <button class="btn btn-sm btn-danger" onclick="handleRefused(this)"><i class="fa fa-times"></i></button>';
-                tr.appendChild(td);
-                newTable.appendChild(tr);
-            }
-
-            oldTable.parentNode.replaceChild(newTable, oldTable);
-        };
     </script>
 </body>
 

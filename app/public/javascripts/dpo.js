@@ -9,6 +9,7 @@ function displayRequests(requests) {
 }
 
 function removeRow(item) {
+    console.log($(item).closest('tr'))
     $(item).closest('tr').remove()
 }
 function handleValid(item) {
@@ -44,8 +45,10 @@ function populateTableBody(tableBodyID, json_obj, spec) {
                     td.innerHTML = '<div class="small text-muted">18/09/2018</div><strong>' +
                         p[key] +
                         '</strong>';
-                } else {
-                    td.innerHTML = p[key];
+                } else if (key == 'user'){
+                    td.setAttribute['user'] = p[key];
+                } else if (key == 'target'){
+                    td.setAttribute['target'] = p[key];
                 }
                 tr.appendChild(td);
             }

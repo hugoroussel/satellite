@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.0.0
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+
+<head>
+  <base href="./">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="Satellite">
+  <meta name="author" content="Satellite team">
+  <meta name="keyword" content="gdpr, europe, regulation, law, compliance">
+  <title>Satellite GDPR Compliance Tool</title>
+  <!-- Icons-->
+  <link href="../stylesheets/coreui-icons.min.css" rel="stylesheet">
+  <!-- <link href="../stylesheets/flag-icon.min.css" rel="stylesheet"> -->
+  <link href="../stylesheets/font-awesome.min.css" rel="stylesheet">
+  <link href="../stylesheets/simple-line-icons.css" rel="stylesheet">
+  <!-- Main styles for this application-->
+  <link href="../stylesheets/style.css" rel="stylesheet">
+  <!-- <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet"> -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+<link rel="manifest" href="../img/favicon/site.webmanifest">
+<link rel="mask-icon" href="../img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../img/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+  <header class="app-header navbar">
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <img class="navbar-brand-full" src="../img/brand/logo.svg" width="89" height="25" alt="CoreUI Logo">
+      <img class="navbar-brand-minimized" src="../img/brand/sygnet.svg" width="30" height="30" alt="CoreUI Logo">
+    </a>
+
+    <ul class="nav navbar-nav d-md-down-none">
+      <li class="nav-item px-3">
+        <a class="nav-link" href="#">DPO</a>
+      </li>
+      <li class="nav-item px-3">
+        <a class="nav-link" href="#">User A</a>
+      </li>
+      <li class="nav-item px-3">
+        <a class="nav-link" href="#">User B</a>
+      </li>
+    </ul>
+
+  </header>
+  <div class="app-body">
+    <div class="sidebar">
+      <nav class="sidebar-nav">
+        <ul class="nav">
+          <li class="nav-title">Basics</li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <i class="nav-icon icon-speedometer"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="notifications.html">
+              <i class="nav-icon icon-bell"></i> Notifications</a>
+          </li>
+          <li class="nav-title">Advanced</li>
+          <li class="nav-item">
+            <a class="nav-link" href="info.html">
+              <i class="nav-icon icon-user"></i> My Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="permissions.html">
+              <i class="nav-icon icon-people"></i> Permissions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="requests.html">
+              <i class="nav-icon icon-user-follow"></i> Requests</a>
+          </li>
+          <li class="nav-item mt-auto">
+            <a class="nav-link nav-link-danger" href="https://coreui.io/pro/" target="_top">
+              <i class="nav-icon icon-globe"></i> Support
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main class="main">
+      <!-- Breadcrumb-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item">
+          <a href="info.html">Bob</a>
+        </li>
+        <li class="breadcrumb-item active">Dashboard</li>
+      </ol>
+
+      <div class="container-fluid">
+        <div class="animated fadeIn">
+          <div class="row">
+            <div class="col-sm-6 col-lg-3">
+              <div class="card text-white bg-primary">
+                <div class="card-body pb-0">
+                  <div class="btn-group float-right">
+                    <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="icon-settings"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                  <div class="text-value">12</div>
+                  <div>People accessing your data</div>
+                </div>
+                <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+                  <canvas class="chart" id="card-chart1" height="70"></canvas>
+                </div>
+              </div>
+            </div>
+            <!-- /.col-->
+            <div class="col-sm-6 col-lg-3">
+              <div class="card text-white bg-info">
+                <div class="card-body pb-0">
+                  <button class="btn btn-transparent p-0 float-right" type="button">
+                    <i class="icon-location-pin"></i>
+                  </button>
+                  <div class="text-value">1721</div>
+                  <div>Some data</div>
+                </div>
+                <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+                  <canvas class="chart" id="card-chart2" height="70"></canvas>
+                </div>
+              </div>
+            </div>
+            <!-- /.col-->
+            <div class="col-sm-6 col-lg-3">
+              <div class="card text-white bg-warning">
+                <div class="card-body pb-0">
+                  <div class="btn-group float-right">
+                    <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="icon-settings"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                  <div class="text-value">9.823</div>
+                  <div>Some other data</div>
+                </div>
+                <div class="chart-wrapper mt-3" style="height:70px;">
+                  <canvas class="chart" id="card-chart3" height="70"></canvas>
+                </div>
+              </div>
+            </div>
+            <!-- /.col-->
+            <div class="col-sm-6 col-lg-3">
+              <div class="card text-white bg-danger">
+                <div class="card-body pb-0">
+                  <div class="btn-group float-right">
+                    <button class="btn btn-transparent dropdown-toggle p-0" type="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="icon-settings"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                  <div class="text-value">42</div>
+                  <div>Data</div>
+                </div>
+                <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+                  <canvas class="chart" id="card-chart4" height="70"></canvas>
+                </div>
+              </div>
+            </div>
+            <!-- /.col-->
+          </div>
+          <!-- /.row-->
+
+
+
+          <!-- ./row -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">Last notifications (24h)</div>
+                <div class="card-body">
+
+                  <div class="col-md-12">
+
+                    <table class="table table-responsive-sm table-hover table-outline mb-0">
+                      <thead class="thead-light">
+                        <tr>
+                          <th class="text-center">
+                            <i class="icon-people"></i>
+                          </th>
+                          <th>User</th>
+                          <th>Subject</th>
+                          <th>Timestamp</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-center">
+                            <div class="avatar">
+                              <img class="img-avatar" src="../img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+                              <span class="avatar-status badge-secondary"></span>
+                            </div>
+                          </td>
+                          <td>
+                            <div>Enéas Kwadwo</div>
+                            <div class="small text-muted">
+                              <span>DPO</span></div>
+                          </td>
+                          <td>
+                            <div class="clearfix">
+                              <i>Follow-up, interns information access granted.</i>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="small text-muted">Yesterday</div>
+                            <strong>7:12pm</strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">
+                            <div class="avatar">
+                              <img class="img-avatar" src="../img/avatars/5.jpg" alt="admin@bootstrapmaster.com">
+                              <span class="avatar-status badge-success"></span>
+                            </div>
+                          </td>
+                          <td>
+                            <div>Agapetus Tadeáš</div>
+                            <div class="small text-muted">
+                              <span>DPO</span></div>
+                          </td>
+
+                          <td>
+                            <div class="clearfix">
+                              <i>Successfully removed authorization of Marcus Miller to access your data.</i> 
+                            </div>
+                          </td>
+                          <td>
+                            <div class="small text-muted">Yesterday</div>
+                            <strong>4:54pm</strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">
+                            <div class="avatar">
+                              <img class="img-avatar" src="../img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+                              <span class="avatar-status badge-danger"></span>
+                            </div>
+                          </td>
+                          <td>
+                            <div>Friderik Dávid</div>
+                            <div class="small text-muted">
+                              <span>DPO</span></div>
+                          </td>
+                          <td>
+                            <div class="clearfix">
+                                <i>Accessing Steve Ballmer data : inadequate reasons.</i> 
+                            </div>
+                          </td>
+                          <td>
+                            <div class="small text-muted">Yesterday</div>
+                            <strong>11:23am</strong>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.col -->
+                </div>
+              </div>
+            </div>
+            <!-- /.col-->
+          </div>
+          <!-- /.row-->
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="app-footer" style='color:rgba(0,0,0,0.6);'>
+    <div class="ml-auto">
+      <!-- <a href="https://coreui.io">CoreUI</a> -->
+      <span style='font-size: 8pt;'>Made with <i class="fa fa-heart"></i> at London EOS Hackathon
+      </span>
+    </div>
+
+  </footer>
+  <!-- CoreUI and necessary plugins-->
+  <!-- <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/pace-progress/pace.min.js"></script>
+  <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+  <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script> -->
+  <!-- Plugins and scripts required by this view-->
+  <!-- <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>-->
+  <script src="../dist/bundle.js"></script>
+
+  <script src="../javascripts/jquery.min.js"></script>
+  <script src="../javascripts/popper.min.js"></script>
+  <script src="../javascripts/bootstrap.min.js"></script>
+  <script src="../javascripts/coreui.min.js"></script>
+  <!-- <script src="../javascripts/Chart.bundle.min.js"></script> -->
+  <script src="../javascripts/Chart.min.js"></script>
+  <script src="../javascripts/custom-tooltips.min.js"></script>
+  <script src="../javascripts/widgets.js"></script>
+
+</body>
+
+</html>

@@ -30,8 +30,6 @@ class Satellite : public eosio::contract {
     string not_sensitive,
     account_name accessor) {
 
-      return;
-
      //verification commented for testing purposes
      //require_auth(dpo_owner)
 
@@ -87,7 +85,7 @@ class Satellite : public eosio::contract {
     auto iterator = employees_table.find(person+accessor);
     eosio_assert(iterator != employees_table.end(), "No such employee in the table");
 
-    employees_table.modify(iterator, person, [&](auto& emp){
+    employees_table.modify(iterator, _self, [&](auto& emp){
     emp._person = person;
     emp._hash_first_name = strReplace(emp._hash_first_name,hash_first_name);
     emp._hash_last_name = strReplace(emp._hash_last_name,hash_last_name);

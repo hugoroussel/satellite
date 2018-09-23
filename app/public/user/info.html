@@ -35,6 +35,11 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+
+    <script src="../dist/bundle.js"></script>
+    <script src="../javascripts/jquery.min.js"></script>
+    <script src="../javascripts/popper.min.js"></script>
+    <script src="../javascripts/bootstrap.min.js"></script>
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -276,10 +281,6 @@
     <!-- <script src="node_modules/chart.js/dist/Chart.min.js"></script>
   <script src="node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
   <script src="js/main.js"></script> -->
-    <script src="../dist/bundle.js"></script>
-    <script src="../javascripts/jquery.min.js"></script>
-    <script src="../javascripts/popper.min.js"></script>
-    <script src="../javascripts/bootstrap.min.js"></script>
 
     <script>
 
@@ -291,6 +292,8 @@
             $('#country').remove();
             $('#phone').remove();
             $('#email').remove();
+
+            removeUser();
         }
 
     </script>

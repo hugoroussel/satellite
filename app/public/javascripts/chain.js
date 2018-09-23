@@ -44,7 +44,7 @@ exports.newRequest = function (from, to, hashdes, sensitive) {
 
 exports.deleteEmployee = function (userAcc) {
     return eos.contract(contractName)
-        .then(acc => acc.remove(userAcc))
+        .then(acc => acc.deleterec(userAcc))
         .then(console.log)
         .catch(console.log);
 }
